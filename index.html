@@ -13,148 +13,149 @@
   <style>
     /* Custom styles */
     :root {
-    --primary-color: #001f3f;    /* Blue */
-    --secondary-color: #32cd32;  /* Green */
-    --white-color: #ffffff;      /* White */
-    --hover-primary: #001a35;    /* Darker Blue for Hover */
-    --hover-secondary: #2cad2c;  /* Darker Green for Hover */
+      --primary-color: #001f3f; /* Blue */
+      --secondary-color: #32cd32; /* Green */
+      --white-color: #ffffff;     /* White */
+      --hover-primary: #001a35;   /* Darker Blue for Hover */
+      --hover-secondary: #2cad2c; /* Darker Green for Hover */
     }
 
     /* General Text Colors */
     .text-primary {
-    color: var(--primary-color);
+      color: var(--primary-color);
     }
     .text-secondary {
-    color: var(--secondary-color);
+      color: var(--secondary-color);
     }
     .bg-primary {
-    background-color: var(--primary-color);
+      background-color: var(--primary-color);
     }
     .bg-secondary {
-    background-color: var(--secondary-color);
+      background-color: var(--secondary-color);
     }
     .text-white {
-    color: var(--white-color);
+      color: var(--white-color);
     }
 
     /* Buttons */
     .btn-primary {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    border-radius: 9999px; /* Rounded full */
-    padding: 0.75rem 1.5rem; /* py-3 px-6 */
-    transition: background-color 0.3s;
+      background-color: var(--primary-color);
+      color: var(--white-color);
+      border-radius: 9999px; /* Rounded full */
+      padding: 0.75rem 1.5rem; /* py-3 px-6 */
+      transition: background-color 0.3s;
     }
     .btn-primary:hover {
-    background-color: var(--hover-primary);
+      background-color: var(--hover-primary);
     }
     .btn-secondary {
-    background-color: var(--secondary-color);
-    color: var(--white-color);
-    border-radius: 9999px;
-    padding: 0.75rem 1.5rem;
-    transition: background-color 0.3s;
+      background-color: var(--secondary-color);
+      color: var(--white-color);
+      border-radius: 9999px;
+      padding: 0.75rem 1.5rem;
+      transition: background-color 0.3s;
     }
     .btn-secondary:hover {
-    background-color: var(--hover-secondary);
+      background-color: var(--hover-secondary);
     }
 
     /* Gradient Text */
     .gradient-text {
-    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     /* Update link colors */
     a {
-    color: var(--primary-color);
-    transition: color 0.3s;
+      color: var(--primary-color);
+      transition: color 0.3s;
     }
     a:hover {
-    color: var(--secondary-color);
+      color: var(--secondary-color);
     }
 
     /* Navbar styles */
     header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 50;
-    background-color: var(--primary-color);
-    overflow: hidden;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 50;
+      background-color: var(--primary-color);
+      overflow: hidden;
     }
     header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, var(--secondary-color) 0%, transparent 100%);
-    opacity: 0.2;
-    pointer-events: none;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--secondary-color) 0%, transparent 100%);
+      opacity: 0.2;
+      pointer-events: none;
     }
     header .navbar {
-    position: relative;
-    z-index: 10;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+      position: relative;
+      z-index: 10;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     .navbar a {
-    color: var(--white-color);
-    position: relative;
-    transition: color 0.3s;
-    font-weight: 500;
-    font-size: 1.125rem; /* text-lg */
+      color: var(--white-color);
+      position: relative;
+      transition: color 0.3s;
+      font-medium: 500;
+      font-size: 1.125rem; /* text-lg */
     }
     .navbar a:hover {
-    color: var(--secondary-color);
+      color: var(--secondary-color);
     }
     .navbar a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: var(--secondary-color);
-    transition: width 0.3s;
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--secondary-color);
+      transition: width 0.3s;
     }
     .navbar a:hover::after {
-    width: 100%;
+      width: 100%;
     }
     #menu-btn {
-    color: var(--secondary-color);
-    transition: color 0.3s;
-    outline: none;
+      color: var(--secondary-color);
+      transition: color 0.3s;
+    }
+    #menu-btn:focus {
+      outline: none;
     }
     #menu-btn:hover {
-    color: var(--white-color);
+      color: var(--white-color);
     }
     .mobile-menu-open #menu-btn i {
-    transform: rotate(90deg);
-    transition: transform 0.3s;
+      transform: rotate(90deg);
+      transition: transform 0.3s;
     }
     .mobile-menu-open #mobile-menu {
-    display: block;
+      display: block;
     }
 
     /* Adjusted Padding for Larger Navbar */
     header .navbar {
-    padding: 1.5rem;
+      padding: 1.5rem;
     }
 
     /* Sticky Navbar Adjustment */
     body {
-    margin-top: 96px; /* Adjusted margin-top to account for navbar height */
+      margin-top: 96px; /* Adjusted margin-top to account for navbar height */
     }
-
 /* Circle Rotating Services Styles */
 .holderCircle {
   width: 500px;
@@ -283,7 +284,6 @@
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-  /* Adjustments for smaller screens */
   .holderCircle {
     width: 300px;
     height: 300px;
@@ -306,10 +306,9 @@
     top: 50%;
   }
   .navbar a {
-    font-size: 1rem; /* text-base */
+    @apply text-base;
   }
 }
-
 
 /* Services Section Enhancements */
 .service-card {
@@ -375,19 +374,17 @@
 }
 .testimonial-card {
   min-width: 300px;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
-  color: var(--white-color);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 .testimonial-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-  background-color: rgba(255, 255, 255, 0.1);
 }
 .testimonial-card p {
-  color: rgba(255, 255, 255, 0.8);
+  color: #e0e0e0;
 }
 .testimonial-card img {
   border: 2px solid var(--secondary-color);
@@ -400,15 +397,11 @@
 .project-card {
   position: relative;
   overflow: hidden;
-  border-radius: 0.75rem;
   transition: transform 0.3s, box-shadow 0.3s;
-  background-color: rgba(255, 255, 255, 0.05);
-  color: var(--white-color);
 }
 .project-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-  background-color: rgba(255, 255, 255, 0.1);
 }
 .project-card img {
   transition: transform 0.5s;
@@ -426,15 +419,16 @@
   color: var(--secondary-color);
 }
 .project-card p {
-  color: rgba(255, 255, 255, 0.8);
+  color: #e0e0e0;
 }
 .project-card a {
   color: var(--secondary-color);
   transition: color 0.3s;
 }
 .project-card a:hover {
-  color: var(--hover-secondary);
+  color: var(--white-color);
 }
+
 /* Decorative Gradient Overlay for Sections */
 section[id="testimonials"],
 section[id="portfolio"],
@@ -442,7 +436,6 @@ section[id="intro"] {
   position: relative;
   overflow: hidden;
   background-color: var(--primary-color);
-  color: var(--white-color);
 }
 section[id="testimonials"]::before,
 section[id="portfolio"]::before,
@@ -481,25 +474,27 @@ section[id="intro"] h2::after {
 section[id="testimonials"] p,
 section[id="portfolio"] p,
 section[id="intro"] p {
-  color: rgba(255, 255, 255, 0.8);
+  color: #e0e0e0;
 }
 
-/* Footer Styles */
-footer {
-  background-color: var(--primary-color);
-  color: var(--white-color);
-  position: relative;
-  overflow: hidden;
+/* AOS Animations for Cards */
+[data-aos="fade-right"] {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition-property: opacity, transform;
 }
-footer::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 70%);
-  transform: rotate(45deg);
+[data-aos="fade-right"].aos-animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+[data-aos="fade-up"] {
+  opacity: 0;
+  transform: translateY(50px);
+  transition-property: opacity, transform;
+}
+[data-aos="fade-up"].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Adjustments for Merged Contact Section in Footer */
@@ -509,582 +504,538 @@ footer #contact {
 }
 footer #contact h2,
 footer #contact p {
-  color: var(--white-color);
+  color: #e0e0e0;
 }
 footer hr {
   border-color: rgba(255, 255, 255, 0.2);
 }
 /* Adjust form styles within footer */
-footer #contact input,
-footer #contact textarea {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: var(--white-color);
-}
-footer #contact input::placeholder,
-footer #contact textarea::placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-footer #contact input:focus,
-footer #contact textarea:focus {
-  background-color: rgba(255, 255, 255, 0.15);
-  border-color: var(--secondary-color);
-}
-footer #contact button {
-  background-color: var(--secondary-color);
-}
-footer #contact button:hover {
-  background-color: var(--hover-secondary);
-}
-/* Adjustments for Footer Content */
-footer .footer {
-  padding-top: 60px;
-}
-footer .footer h3,
-footer .footer h4 {
-  position: relative;
-  color: var(--secondary-color);
-}
-footer .footer h3::after,
-footer .footer h4::after {
-  content: '';
-  display: block;
-  width: 50px;
-  height: 3px;
-  background: var(--secondary-color);
-  margin-top: 0.5rem;
-}
-footer .footer a {
-  color: var(--white-color);
-  transition: color 0.3s;
-}
-footer .footer a:hover {
-  color: var(--secondary-color);
-}
-footer .footer .social-icons a {
-  transition: transform 0.3s, color 0.3s;
-}
-footer .footer .social-icons a:hover {
-  transform: scale(1.1);
-  color: var(--secondary-color);
+/* Footer Styles */
+footer {
+      background-color: var(--primary-color);
+      color: var(--gray-200);
+      position: relative;
+      overflow: hidden;
+    }
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, transparent 100%);
+    opacity: 0.2;
+    pointer-events: none;
 }
 
 /* Input Focus States */
 input:focus,
-textarea:focus {
-  outline: none;
-  border-color: var(--secondary-color);
-  box-shadow: 0 0 0 1px var(--secondary-color);
-}
+    textarea:focus {
+      outline: none;
+      border-color: var(--secondary-color);
+      box-shadow: 0 0 0 1px var(--secondary-color);
+    }
 
-/* Additional Styles */
-.antialiased {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+    /* Additional Styles */
+    .antialiased {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
 </style>
   
 </head>
 <body class="antialiased text-gray-900">
     <header>
         <div class="navbar">
-        <!-- Logo -->
-        <a href="#" class="text-3xl font-bold text-secondary hover:text-white transition duration-300">
+          <!-- Logo -->
+          <a href="#" class="text-3xl font-bold text-secondary hover:text-white transition duration-300">
             <i class="fas fa-brain"></i> Code Brain Hub
-        </a>
-        <!-- Navigation -->
-        <nav class="hidden md:flex space-x-8">
+          </a>
+          <!-- Navigation -->
+          <nav class="hidden md:flex space-x-8">
             <a href="#home" class="nav-link">Home</a>
             <a href="#services" class="nav-link">Services</a>
             <a href="#portfolio" class="nav-link">Portfolio</a>
             <a href="#testimonials" class="nav-link">Testimonials</a>
             <a href="#contact" class="nav-link">Contact</a>
-        </nav>
-        <!-- Mobile Menu Button -->
-        <button id="menu-btn" class="md:hidden">
+          </nav>
+          <!-- Mobile Menu Button -->
+          <button id="menu-btn" class="md:hidden">
             <i class="fas fa-bars fa-2x"></i>
-        </button>
+          </button>
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-primary shadow-lg">
-        <nav class="px-6 py-4 space-y-2">
+          <nav class="px-6 py-4 space-y-2">
             <a href="#home" class="block nav-link">Home</a>
             <a href="#services" class="block nav-link">Services</a>
             <a href="#portfolio" class="block nav-link">Portfolio</a>
             <a href="#testimonials" class="block nav-link">Testimonials</a>
             <a href="#contact" class="block nav-link">Contact</a>
-        </nav>
+          </nav>
         </div>
-    </header>
+      </header>
       
-    <!-- Main Content -->
-    <main class="pt-24">
-        <!-- Hero Section with Circle Rotating Services -->
-        <section id="home" class="min-h-screen flex items-center bg-white">
+        <!-- Main Content -->
+        <main class="pt-24">
+          <!-- Hero Section with Circle Rotating Services -->
+          <section id="home" class="min-h-screen flex items-center bg-white">
             <div class="container mx-auto px-6 flex flex-col items-center">
-                <!-- Text Content -->
-                <div class="w-full text-center" data-aos="fade-down">
+              <!-- Text Content -->
+              <div class="w-full text-center" data-aos="fade-down">
                 <h1 class="text-5xl md:text-6xl font-extrabold leading-tight text-primary">
-                    Innovating <span class="text-secondary">Tomorrow's</span> Solutions Today
+                  Innovating <span class="text-secondary">Tomorrow's</span> Solutions Today
                 </h1>
                 <p class="mt-6 text-xl md:text-2xl text-gray-700">
-                    Delivering cutting-edge tech solutions and products
+                  Delivering cutting-edge tech solutions and products
                 </p>
                 <div class="mt-8 flex justify-center space-x-4">
-                    <a href="#services" class="btn-secondary hover:bg-green-600">Explore Our Services</a>
-                    <a href="#contact" class="btn-primary hover:bg-blue-800">Schedule a Call</a>
+                  <a href="#services" class="btn-secondary hover:bg-green-600">Explore Our Services</a>
+                  <a href="#contact" class="btn-primary hover:bg-blue-800">Schedule a Call</a>
                 </div>
-                </div>
-
-                <!-- Circle Rotating Services -->
-                <div class="mt-12" data-aos="fade-up">
+              </div>
+      
+              <!-- Circle Rotating Services -->
+              <div class="mt-12" data-aos="fade-up">
                 <div class="holderCircle">
-                    <div class="round"></div>
-                    <div class="dotCircle">
+                  <div class="round"></div>
+                  <div class="dotCircle">
                     <span class="itemDot active itemDot1" data-tab="1">
-                        <i class="fa-solid fa-mobile-screen-button"></i>
+                      <i class="fa-solid fa-mobile-screen-button"></i>
                     </span>
                     <span class="itemDot itemDot2" data-tab="2">
-                        <i class="fa-solid fa-cloud"></i>
+                      <i class="fa-solid fa-cloud"></i>
                     </span>
                     <span class="itemDot itemDot3" data-tab="3">
-                        <i class="fa-solid fa-robot"></i>
+                      <i class="fa-solid fa-robot"></i>
                     </span>
                     <span class="itemDot itemDot4" data-tab="4">
-                        <i class="fa-solid fa-code"></i>
+                      <i class="fa-solid fa-code"></i>
                     </span>
                     <span class="itemDot itemDot5" data-tab="5">
-                        <i class="fa-solid fa-link"></i>
+                      <i class="fa-solid fa-link"></i>
                     </span>
                     <span class="itemDot itemDot6" data-tab="6">
-                        <i class="fa-solid fa-cogs"></i>
+                      <i class="fa-solid fa-cogs"></i>
                     </span>
-                    </div>
-                    <div class="contentCircle">
+                  </div>
+                  <div class="contentCircle">
                     <div class="CirItem active CirItem1">
-                        <h2 class="title">Mobile App</h2>
-                        <p>Developing intuitive mobile applications for iOS and Android platforms.</p>
+                      <h2 class="title">Mobile App</h2>
+                      <p>Developing intuitive mobile applications for iOS and Android platforms.</p>
                     </div>
                     <div class="CirItem CirItem2">
-                        <h2 class="title">Cloud</h2>
-                        <p>Offering scalable cloud services for businesses of all sizes.</p>
+                      <h2 class="title">Cloud</h2>
+                      <p>Offering scalable cloud services for businesses of all sizes.</p>
                     </div>
                     <div class="CirItem CirItem3">
-                        <h2 class="title">AI Solutions</h2>
-                        <p>Implementing AI-driven solutions to automate and optimize processes.</p>
+                      <h2 class="title">AI Solutions</h2>
+                      <p>Implementing AI-driven solutions to automate and optimize processes.</p>
                     </div>
                     <div class="CirItem CirItem4">
-                        <h2 class="title">Web App</h2>
-                        <p>Building responsive and scalable web applications using the latest technologies.</p>
+                      <h2 class="title">Web App</h2>
+                      <p>Building responsive and scalable web applications using the latest technologies.</p>
                     </div>
                     <div class="CirItem CirItem5">
-                        <h2 class="title">Blockchain</h2>
-                        <p>Implementing secure and transparent blockchain solutions.</p>
+                      <h2 class="title">Blockchain</h2>
+                      <p>Implementing secure and transparent blockchain solutions.</p>
                     </div>
                     <div class="CirItem CirItem6">
-                        <h2 class="title">Digital Solutions</h2>
-                        <p>Providing comprehensive digital solutions to drive business growth.</p>
+                      <h2 class="title">Digital Solutions</h2>
+                      <p>Providing comprehensive digital solutions to drive business growth.</p>
                     </div>
-                    </div>
+                  </div>
                 </div>
+              </div>
+            </div>
+          </section>
+      
+          <!-- Introduction Section -->
+          <section id="intro" class="py-16 bg-primary text-gray-200 relative">
+            <!-- Decorative Element -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-secondary to-transparent opacity-20 pointer-events-none"></div>
+            <!-- Content -->
+            <div class="container mx-auto px-6 text-center relative z-10">
+              <h2 class="text-4xl md:text-5xl font-bold text-secondary" data-aos="fade-up">
+                Welcome to Code Brain Hub
+              </h2>
+              <p class="mt-6 text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Innovating Tomorrow's Solutions Today
+              </p>
+              <!-- Key Features -->
+              <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center" data-aos="fade-up">
+                  <i class="fas fa-lightbulb fa-3x text-secondary"></i>
+                  <h3 class="mt-4 text-xl text-white font-semibold">Innovative Solutions</h3>
+                  <p class="mt-2 text-gray-300">
+                    Harnessing cutting-edge technology to deliver unique solutions.
+                  </p>
                 </div>
-            </div>
-        </section>
-    
-        <!-- Introduction Section -->
-        <section id="intro" class="py-16 bg-primary text-gray-200 relative">
-        <!-- Decorative Element -->
-        <div class="absolute inset-0 bg-gradient-to-tr from-secondary to-transparent opacity-20 pointer-events-none"></div>
-        <!-- Content -->
-        <div class="container mx-auto px-6 text-center relative z-10">
-            <h2 class="text-4xl md:text-5xl font-bold text-secondary" data-aos="fade-up">
-            Welcome to Code Brain Hub
-            </h2>
-            <p class="mt-6 text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-            Innovating Tomorrow's Solutions Today
-            </p>
-            <!-- Key Features -->
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="text-center" data-aos="fade-up">
-                <i class="fas fa-lightbulb fa-3x text-secondary"></i>
-                <h3 class="mt-4 text-xl text-white font-semibold">Innovative Solutions</h3>
-                <p class="mt-2 text-gray-300">
-                Harnessing cutting-edge technology to deliver unique solutions.
-                </p>
-            </div>
-            <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-users fa-3x text-secondary"></i>
-                <h3 class="mt-4 text-xl text-white font-semibold">Expert Team</h3>
-                <p class="mt-2 text-gray-300">
-                A team of professionals dedicated to your success.
-                </p>
-            </div>
-            <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-chart-line fa-3x text-secondary"></i>
-                <h3 class="mt-4 text-xl text-white font-semibold">Growth Oriented</h3>
-                <p class="mt-2 text-gray-300">
-                Focused on delivering results that drive business growth.
-                </p>
-            </div>
-            </div>
-        </div>
-        </section>
-    
-        <!-- Services Section -->
-        <section id="services" class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary" data-aos="fade-up">
-            Our Services
-            </h2>
-            <p class="mt-4 text-center text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-            We offer a comprehensive suite of services to help businesses thrive in the digital age.
-            </p>
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Service Card 1 -->
-            <div class="service-card" data-aos="fade-up">
-                <div class="relative">
-                <div class="text-center">
-                    <i class="fas fa-laptop-code fa-3x text-secondary"></i>
-                    <h3 class="mt-4 text-2xl font-semibold">Web Development</h3>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                  <i class="fas fa-users fa-3x text-secondary"></i>
+                  <h3 class="mt-4 text-xl text-white font-semibold">Expert Team</h3>
+                  <p class="mt-2 text-gray-300">
+                    A team of professionals dedicated to your success.
+                  </p>
                 </div>
-                <p class="mt-4">
-                    Building responsive and scalable websites using the latest technologies.
-                </p>
-                <ul class="mt-4 list-disc list-inside space-y-1">
-                    <li>Custom Web Applications</li>
-                    <li>eCommerce Solutions</li>
-                    <li>Content Management Systems</li>
-                </ul>
-                </div>
-            </div>
-            <!-- Service Card 2 -->
-            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="relative">
-                <div class="text-center">
-                    <i class="fas fa-mobile-alt fa-3x text-secondary"></i>
-                    <h3 class="mt-4 text-2xl font-semibold">Mobile Development</h3>
-                </div>
-                <p class="mt-4">
-                    Creating intuitive mobile applications for iOS and Android platforms.
-                </p>
-                <ul class="mt-4 list-disc list-inside space-y-1">
-                    <li>Native and Cross-Platform Apps</li>
-                    <li>User Experience Design</li>
-                    <li>App Store Deployment</li>
-                </ul>
-                </div>
-            </div>
-            <!-- Service Card 3 -->
-            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="relative">
-                <div class="text-center">
-                    <i class="fas fa-lock fa-3x text-secondary"></i>
-                    <h3 class="mt-4 text-2xl font-semibold">Blockchain Development</h3>
-                </div>
-                <p class="mt-4">
-                    Implementing secure and transparent blockchain solutions.
-                </p>
-                <ul class="mt-4 list-disc list-inside space-y-1">
-                    <li>Smart Contracts</li>
-                    <li>Decentralized Applications (dApps)</li>
-                    <li>Blockchain Integration</li>
-                </ul>
-                </div>
-            </div>
-            <!-- Additional service cards can be added here -->
-            </div>
-        </div>
-        </section>
-    
-        <!-- Portfolio Section -->
-        <!-- Portfolio Section -->
-    <section id="portfolio" class="py-16 relative">
-        <!-- Decorative Element -->
-        <div class="absolute inset-0 bg-gradient-to-tr from-secondary to-transparent opacity-20 pointer-events-none"></div>
-        <div class="container mx-auto px-6 relative z-10">
-          <h2 class="text-3xl md:text-4xl font-bold text-center" data-aos="fade-up">
-            Our Portfolio
-          </h2>
-          <p class="mt-4 text-center max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-            A showcase of our latest work and achievements.
-          </p>
-          <!-- Projects Grid -->
-          <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Project Card 1 -->
-            <div class="project-card" data-aos="fade-up">
-              <div class="relative">
-                <img src="https://via.placeholder.com/400x300?text=Project+Alpha" alt="Project Alpha" class="w-full h-56 object-cover">
-                <!-- Overlay -->
-                <div class="overlay"></div>
-                <div class="absolute bottom-4 left-4">
-                  <h3 class="text-xl font-semibold">Project Alpha</h3>
-                  <p class="mt-2">
-                    Developed a responsive web app increasing user engagement by 50%.
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                  <i class="fas fa-chart-line fa-3x text-secondary"></i>
+                  <h3 class="mt-4 text-xl text-white font-semibold">Growth Oriented</h3>
+                  <p class="mt-2 text-gray-300">
+                    Focused on delivering results that drive business growth.
                   </p>
                 </div>
               </div>
-              <div class="p-6">
-                <a href="#" class="inline-block hover:underline">
-                  View Case Study
-                </a>
-              </div>
             </div>
-            <!-- Project Card 2 -->
-            <!-- ... (Additional project cards) ... -->
-          </div>
-          <div class="mt-12 text-center" data-aos="fade-up">
-            <a href="#" class="btn-secondary hover:bg-green-600">View Full Portfolio</a>
-          </div>
-        </div>
-      </section>
-      <!-- Testimonials Section -->
-    <section id="testimonials" class="py-16 relative">
-        <!-- Decorative Element -->
-        <div class="absolute inset-0 bg-gradient-to-tr from-secondary to-transparent opacity-20 pointer-events-none"></div>
-        <div class="container mx-auto px-6 relative z-10">
-          <h2 class="text-3xl md:text-4xl font-bold text-center" data-aos="fade-up">
-            What Our Clients Say
-          </h2>
-          <p class="mt-4 text-center max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-            Hear from businesses that have partnered with us.
-          </p>
-          <!-- Testimonials Carousel -->
-          <div class="mt-12 relative">
-            <div class="testimonials-carousel flex space-x-6 overflow-x-auto">
-              <!-- Testimonial Card 1 -->
-              <div class="testimonial-card p-6 shadow-lg" data-aos="fade-right">
-                <p class="italic">
-                  "Code Brain Hub transformed our online presence, leading to a 40% increase in sales."
-                </p>
-                <div class="mt-4 flex items-center">
-                  <img src="https://via.placeholder.com/50" alt="Sarah Johnson" class="w-12 h-12 rounded-full border-2 border-secondary">
-                  <div class="ml-4">
-                    <p class="font-semibold">Sarah Johnson</p>
-                    <p class="text-gray-300">CEO, RetailCo</p>
-                  </div>
-                </div>
-              </div>
-              <div class="testimonial-card p-6 shadow-lg" data-aos="fade-right">
-                <p class="italic">
-                  "Code Brain Hub transformed our online presence, leading to a 40% increase in sales."
-                </p>
-                <div class="mt-4 flex items-center">
-                  <img src="https://via.placeholder.com/50" alt="Sarah Johnson" class="w-12 h-12 rounded-full border-2 border-secondary">
-                  <div class="ml-4">
-                    <p class="font-semibold">Sarah Johnson</p>
-                    <p class="text-gray-300">CEO, RetailCo</p>
-                  </div>
-                </div>
-              </div>
-              <div class="testimonial-card p-6 shadow-lg" data-aos="fade-right">
-                <p class="italic">
-                  "Code Brain Hub transformed our online presence, leading to a 40% increase in sales."
-                </p>
-                <div class="mt-4 flex items-center">
-                  <img src="https://via.placeholder.com/50" alt="Sarah Johnson" class="w-12 h-12 rounded-full border-2 border-secondary">
-                  <div class="ml-4">
-                    <p class="font-semibold">Sarah Johnson</p>
-                    <p class="text-gray-300">CEO, RetailCo</p>
-                  </div>
-                </div>
-              </div>
-              <div class="testimonial-card p-6 shadow-lg" data-aos="fade-right">
-                <p class="italic">
-                  "Code Brain Hub transformed our online presence, leading to a 40% increase in sales."
-                </p>
-                <div class="mt-4 flex items-center">
-                  <img src="https://via.placeholder.com/50" alt="Sarah Johnson" class="w-12 h-12 rounded-full border-2 border-secondary">
-                  <div class="ml-4">
-                    <p class="font-semibold">Sarah Johnson</p>
-                    <p class="text-gray-300">CEO, RetailCo</p>
-                  </div>
-                </div>
-              </div>
-              <div class="testimonial-card p-6 shadow-lg" data-aos="fade-right">
-                <p class="italic">
-                  "Code Brain Hub transformed our online presence, leading to a 40% increase in sales."
-                </p>
-                <div class="mt-4 flex items-center">
-                  <img src="https://via.placeholder.com/50" alt="Sarah Johnson" class="w-12 h-12 rounded-full border-2 border-secondary">
-                  <div class="ml-4">
-                    <p class="font-semibold">Sarah Johnson</p>
-                    <p class="text-gray-300">CEO, RetailCo</p>
-                  </div>
-                </div>
-              </div>
-              <div class="testimonial-card p-6 shadow-lg" data-aos="fade-right">
-                <p class="italic">
-                  "Code Brain Hub transformed our online presence, leading to a 40% increase in sales."
-                </p>
-                <div class="mt-4 flex items-center">
-                  <img src="https://via.placeholder.com/50" alt="Sarah Johnson" class="w-12 h-12 rounded-full border-2 border-secondary">
-                  <div class="ml-4">
-                    <p class="font-semibold">Sarah Johnson</p>
-                    <p class="text-gray-300">CEO, RetailCo</p>
-                  </div>
-                </div>
-              </div>
-              <div class="testimonial-card p-6 shadow-lg" data-aos="fade-right">
-                <p class="italic">
-                  "Code Brain Hub transformed our online presence, leading to a 40% increase in sales."
-                </p>
-                <div class="mt-4 flex items-center">
-                  <img src="https://via.placeholder.com/50" alt="Sarah Johnson" class="w-12 h-12 rounded-full border-2 border-secondary">
-                  <div class="ml-4">
-                    <p class="font-semibold">Sarah Johnson</p>
-                    <p class="text-gray-300">CEO, RetailCo</p>
-                  </div>
-                </div>
-              </div>
-              <!-- Testimonial Card 2 -->
-              <!-- ... (Additional testimonial cards) ... -->
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </main>
+          </section>
       
-    <!-- Footer with Merged Contact Section -->
-    <footer>
-        <!-- Decorative Element -->
-        <div class="absolute inset-0 bg-gradient-to-tr from-secondary to-transparent opacity-20 pointer-events-none"></div>
-    
-        <!-- Contact Section within Footer -->
-        <div id="contact" class="container mx-auto px-6 py-12 relative z-10">
-        <h2 class="text-3xl md:text-4xl font-bold text-center text-secondary" data-aos="fade-up">
-            Get in Touch
-        </h2>
-        <p class="mt-4 text-center text-gray-200 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-            We're here to answer any questions you may have.
-        </p>
-        <div class="mt-12 max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="400">
-            <form action="#" method="POST" class="space-y-6">
-            <div>
-                <label class="block text-gray-300">Name</label>
-                <input type="text" name="name" class="w-full mt-2 p-3 bg-gray-800 text-gray-200 border border-gray-600 rounded focus:outline-none focus:border-secondary" required>
+          <!-- Services Section -->
+          <section id="services" class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+              <h2 class="text-3xl md:text-4xl font-bold text-center text-primary" data-aos="fade-up">
+                Our Services
+              </h2>
+              <p class="mt-4 text-center text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                We offer a comprehensive suite of services to help businesses thrive in the digital age.
+              </p>
+              <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card" data-aos="fade-up">
+                  <div class="relative">
+                    <div class="text-center">
+                      <i class="fas fa-laptop-code fa-3x text-secondary"></i>
+                      <h3 class="mt-4 text-2xl font-semibold">Web Development</h3>
+                    </div>
+                    <p class="mt-4">
+                      Building responsive and scalable websites using the latest technologies.
+                    </p>
+                    <ul class="mt-4 list-disc list-inside space-y-1">
+                      <li>Custom Web Applications</li>
+                      <li>eCommerce Solutions</li>
+                      <li>Content Management Systems</li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                  <div class="relative">
+                    <div class="text-center">
+                      <i class="fas fa-mobile-alt fa-3x text-secondary"></i>
+                      <h3 class="mt-4 text-2xl font-semibold">Mobile Development</h3>
+                    </div>
+                    <p class="mt-4">
+                      Creating intuitive mobile applications for iOS and Android platforms.
+                    </p>
+                    <ul class="mt-4 list-disc list-inside space-y-1">
+                      <li>Native and Cross-Platform Apps</li>
+                      <li>User Experience Design</li>
+                      <li>App Store Deployment</li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                  <div class="relative">
+                    <div class="text-center">
+                      <i class="fas fa-lock fa-3x text-secondary"></i>
+                      <h3 class="mt-4 text-2xl font-semibold">Blockchain Development</h3>
+                    </div>
+                    <p class="mt-4">
+                      Implementing secure and transparent blockchain solutions.
+                    </p>
+                    <ul class="mt-4 list-disc list-inside space-y-1">
+                      <li>Smart Contracts</li>
+                      <li>Decentralized Applications (dApps)</li>
+                      <li>Blockchain Integration</li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- Additional service cards can be added here -->
+              </div>
             </div>
-            <div>
-                <label class="block text-gray-300">Email</label>
-                <input type="email" name="email" class="w-full mt-2 p-3 bg-gray-800 text-gray-200 border border-gray-600 rounded focus:outline-none focus:border-secondary" required>
+          </section>
+      
+          <!-- Portfolio Section -->
+          <section id="portfolio" class="py-16 bg-primary text-gray-200 relative">
+            <!-- Decorative Element -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-secondary to-transparent opacity-20 pointer-events-none"></div>
+            <div class="container mx-auto px-6 relative z-10">
+              <h2 class="text-3xl md:text-4xl font-bold text-center text-secondary" data-aos="fade-up">
+                Our Portfolio
+              </h2>
+              <p class="mt-4 text-center text-gray-200 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                A showcase of our latest work and achievements.
+              </p>
+              <!-- Projects Grid -->
+              <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="project-card bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg overflow-hidden shadow-lg" data-aos="fade-up">
+                  <div class="relative">
+                    <img src="https://via.placeholder.com/400x300?text=Project+Alpha" alt="Project Alpha" class="w-full h-56 object-cover">
+                    <!-- Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-70"></div>
+                    <div class="absolute bottom-4 left-4">
+                      <h3 class="text-xl font-semibold text-secondary">Project Alpha</h3>
+                      <p class="mt-2 text-gray-200">
+                        Developed a responsive web app increasing user engagement by 50%.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="p-6">
+                    <a href="#" class="inline-block text-secondary hover:text-white hover:underline">
+                      View Case Study
+                    </a>
+                  </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="project-card bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                  <div class="relative">
+                    <img src="https://via.placeholder.com/400x300?text=Project+Beta" alt="Project Beta" class="w-full h-56 object-cover">
+                    <!-- Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-70"></div>
+                    <div class="absolute bottom-4 left-4">
+                      <h3 class="text-xl font-semibold text-secondary">Project Beta</h3>
+                      <p class="mt-2 text-gray-200">
+                        Implemented AI solutions reducing operational costs by 30%.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="p-6">
+                    <a href="#" class="inline-block text-secondary hover:text-white hover:underline">
+                      View Case Study
+                    </a>
+                  </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="project-card bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                  <div class="relative">
+                    <img src="https://via.placeholder.com/400x300?text=Project+Gamma" alt="Project Gamma" class="w-full h-56 object-cover">
+                    <!-- Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-70"></div>
+                    <div class="absolute bottom-4 left-4">
+                      <h3 class="text-xl font-semibold text-secondary">Project Gamma</h3>
+                      <p class="mt-2 text-gray-200">
+                        Enhanced security with blockchain solutions by 70%.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="p-6">
+                    <a href="#" class="inline-block text-secondary hover:text-white hover:underline">
+                      View Case Study
+                    </a>
+                  </div>
+                </div>
+                <!-- Additional project cards can be added here -->
+              </div>
+              <div class="mt-12 text-center" data-aos="fade-up">
+                <a href="#" class="btn-secondary hover:bg-green-600">View Full Portfolio</a>
+              </div>
             </div>
-            <div>
-                <label class="block text-gray-300">Message</label>
-                <textarea name="message" rows="5" class="w-full mt-2 p-3 bg-gray-800 text-gray-200 border border-gray-600 rounded focus:outline-none focus:border-secondary" required></textarea>
+          </section>
+      
+          <!-- Testimonials Section -->
+          <section id="testimonials" class="py-16 bg-primary text-gray-200 relative">
+            <!-- Decorative Element -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-secondary to-transparent opacity-20 pointer-events-none"></div>
+            <div class="container mx-auto px-6 relative z-10">
+              <h2 class="text-3xl md:text-4xl font-bold text-center text-secondary" data-aos="fade-up">
+                What Our Clients Say
+              </h2>
+              <p class="mt-4 text-center text-gray-200 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Hear from businesses that have partnered with us.
+              </p>
+              <!-- Testimonials Carousel -->
+              <div class="mt-12 relative">
+                <div class="testimonials-carousel flex space-x-6 overflow-hidden">
+                  <!-- Testimonial Card 1 -->
+                  <div class="testimonial-card p-6 shadow-lg" data-aos="fade-right">
+                    <p class="text-gray-100 italic">
+                      "Code Brain Hub transformed our online presence, leading to a 40% increase in sales."
+                    </p>
+                    <div class="mt-4 flex items-center">
+                      <img src="https://via.placeholder.com/50" alt="Sarah Johnson" class="w-12 h-12 rounded-full border-2 border-secondary">
+                      <div class="ml-4">
+                        <p class="font-semibold text-secondary">Sarah Johnson</p>
+                        <p class="text-gray-300">CEO, RetailCo</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Additional testimonial cards -->
+                  <!-- Testimonial Card 2 -->
+                  <div class="testimonial-card p-6 shadow-lg" data-aos="fade-right" data-aos-delay="100">
+                    <p class="text-gray-100 italic">
+                      "Their expertise in blockchain technology is unparalleled."
+                    </p>
+                    <div class="mt-4 flex items-center">
+                      <img src="https://via.placeholder.com/50" alt="Michael Lee" class="w-12 h-12 rounded-full border-2 border-secondary">
+                      <div class="ml-4">
+                        <p class="font-semibold text-secondary">Michael Lee</p>
+                        <p class="text-gray-300">CTO, FinTech Solutions</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Testimonial Card 3 -->
+                  <div class="testimonial-card p-6 shadow-lg" data-aos="fade-right" data-aos-delay="200">
+                    <p class="text-gray-100 italic">
+                      "A reliable partner that consistently delivers high-quality results."
+                    </p>
+                    <div class="mt-4 flex items-center">
+                      <img src="https://via.placeholder.com/50" alt="Emma Williams" class="w-12 h-12 rounded-full border-2 border-secondary">
+                      <div class="ml-4">
+                        <p class="font-semibold text-secondary">Emma Williams</p>
+                        <p class="text-gray-300">Founder, HealthTech Inc.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Additional testimonial cards can be added here -->
+                </div>
+              </div>
             </div>
-            <div class="text-center">
-                <button type="submit" class="btn-secondary hover:bg-green-600">Send Message</button>
-            </div>
-            </form>
-        </div>
-        </div>
-    
-        <!-- Divider -->
-        <div class="container mx-auto px-6 py-4">
-        <hr class="border-gray-600">
-        </div>
-    
-        <!-- Footer Content -->
-        <div class="container mx-auto px-6 py-12 footer relative z-10">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Company Info -->
-            <div data-aos="fade-up">
-            <h3 class="text-2xl font-bold text-secondary mb-4">
-                <i class="fas fa-brain"></i> Code Brain Hub
-            </h3>
-            <p class="text-gray-300">Innovating Tomorrow's Solutions Today</p>
-            <!-- Social Media Icons -->
-            <div class="mt-6 flex space-x-4">
-                <a href="#" class="text-gray-400 hover:text-secondary transition duration-300">
-                <i class="fab fa-facebook fa-2x"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-secondary transition duration-300">
-                <i class="fab fa-twitter fa-2x"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-secondary transition duration-300">
-                <i class="fab fa-linkedin fa-2x"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-secondary transition duration-300">
-                <i class="fab fa-github fa-2x"></i>
-                </a>
-            </div>
-            </div>
-            <!-- Quick Links -->
-            <div data-aos="fade-up" data-aos-delay="100">
-            <h4 class="text-xl font-semibold text-white mb-4">Quick Links</h4>
-            <ul class="space-y-3">
-                <li>
-                <a href="#services" class="flex items-center text-gray-300 hover:text-secondary transition duration-300">
-                    <i class="fas fa-chevron-right mr-2"></i> Services
-                </a>
-                </li>
-                <li>
-                <a href="#portfolio" class="flex items-center text-gray-300 hover:text-secondary transition duration-300">
-                    <i class="fas fa-chevron-right mr-2"></i> Portfolio
-                </a>
-                </li>
-                <li>
-                <a href="#testimonials" class="flex items-center text-gray-300 hover:text-secondary transition duration-300">
-                    <i class="fas fa-chevron-right mr-2"></i> Testimonials
-                </a>
-                </li>
-                <li>
-                <a href="#contact" class="flex items-center text-gray-300 hover:text-secondary transition duration-300">
-                    <i class="fas fa-chevron-right mr-2"></i> Contact
-                </a>
-                </li>
-            </ul>
-            </div>
-            <!-- Contact Info -->
-            <div data-aos="fade-up" data-aos-delay="200">
-            <h4 class="text-xl font-semibold text-white mb-4">Contact Us</h4>
-            <p class="text-gray-300">
-                Feel free to reach out to us via email or phone.
+          </section>
+        </main>
+      
+        <!-- Footer with Merged Contact Section -->
+        <footer>
+          <!-- Decorative Element -->
+          <div class="absolute inset-0 bg-gradient-to-tr from-secondary to-transparent opacity-20 pointer-events-none"></div>
+      
+          <!-- Contact Section within Footer -->
+          <div id="contact" class="container mx-auto px-6 py-12 relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-secondary" data-aos="fade-up">
+              Get in Touch
+            </h2>
+            <p class="mt-4 text-center text-gray-200 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+              We're here to answer any questions you may have.
             </p>
-            <p class="mt-4">
-                <i class="fas fa-envelope mr-2 text-secondary"></i>
-                <a href="mailto:info@codebrainhub.com" class="hover:text-secondary transition duration-300">
-                info@codebrainhub.com
-                </a>
-            </p>
-            <p class="mt-2">
-                <i class="fas fa-phone mr-2 text-secondary"></i>
-                <a href="tel:+1234567890" class="hover:text-secondary transition duration-300">
-                +1 (234) 567-890
-                </a>
-            </p>
+            <div class="mt-12 max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+              <form action="#" method="POST" class="space-y-6">
+                <div>
+                  <label class="block text-gray-300">Name</label>
+                  <input type="text" name="name" class="w-full mt-2 p-3 bg-gray-800 text-gray-200 border border-gray-600 rounded focus:outline-none focus:border-secondary" required>
+                </div>
+                <div>
+                  <label class="block text-gray-300">Email</label>
+                  <input type="email" name="email" class="w-full mt-2 p-3 bg-gray-800 text-gray-200 border border-gray-600 rounded focus:outline-none focus:border-secondary" required>
+                </div>
+                <div>
+                  <label class="block text-gray-300">Message</label>
+                  <textarea name="message" rows="5" class="w-full mt-2 p-3 bg-gray-800 text-gray-200 border border-gray-600 rounded focus:outline-none focus:border-secondary" required></textarea>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn-secondary hover:bg-green-600">Send Message</button>
+                </div>
+              </form>
             </div>
-        </div>
-        <!-- Footer Bottom -->
-        <div class="mt-12 border-t border-gray-600 pt-6 text-center">
-            <p>&copy; 2023 Code Brain Hub. All rights reserved.</p>
-        </div>
-        </div>
-    </footer>
+          </div>
+      
+          <!-- Divider -->
+          <div class="container mx-auto px-6 py-4">
+            <hr class="border-gray-600">
+          </div>
+      
+          <!-- Footer Content -->
+          <div class="container mx-auto px-6 py-12 footer relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <!-- Company Info -->
+              <div data-aos="fade-up">
+                <h3 class="text-2xl font-bold text-secondary mb-4">
+                  <i class="fas fa-brain"></i> Code Brain Hub
+                </h3>
+                <p class="text-gray-300">Innovating Tomorrow's Solutions Today</p>
+                <!-- Social Media Icons -->
+                <div class="mt-6 flex space-x-4">
+                  <a href="#" class="text-gray-400 hover:text-secondary transition duration-300">
+                    <i class="fab fa-facebook fa-2x"></i>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-secondary transition duration-300">
+                    <i class="fab fa-twitter fa-2x"></i>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-secondary transition duration-300">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-secondary transition duration-300">
+                    <i class="fab fa-github fa-2x"></i>
+                  </a>
+                </div>
+              </div>
+              <!-- Quick Links -->
+              <div data-aos="fade-up" data-aos-delay="100">
+                <h4 class="text-xl font-semibold text-white mb-4">Quick Links</h4>
+                <ul class="space-y-3">
+                  <li>
+                    <a href="#services" class="flex items-center text-gray-300 hover:text-secondary transition duration-300">
+                      <i class="fas fa-chevron-right mr-2"></i> Services
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#portfolio" class="flex items-center text-gray-300 hover:text-secondary transition duration-300">
+                      <i class="fas fa-chevron-right mr-2"></i> Portfolio
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#testimonials" class="flex items-center text-gray-300 hover:text-secondary transition duration-300">
+                      <i class="fas fa-chevron-right mr-2"></i> Testimonials
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#contact" class="flex items-center text-gray-300 hover:text-secondary transition duration-300">
+                      <i class="fas fa-chevron-right mr-2"></i> Contact
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <!-- Contact Info -->
+              <div data-aos="fade-up" data-aos-delay="200">
+                <h4 class="text-xl font-semibold text-white mb-4">Contact Us</h4>
+                <p class="text-gray-300">
+                  Feel free to reach out to us via email or phone.
+                </p>
+                <p class="mt-4">
+                  <i class="fas fa-envelope mr-2 text-secondary"></i>
+                  <a href="mailto:info@codebrainhub.com" class="hover:text-secondary transition duration-300">
+                    info@codebrainhub.com
+                  </a>
+                </p>
+                <p class="mt-2">
+                  <i class="fas fa-phone mr-2 text-secondary"></i>
+                  <a href="tel:+1234567890" class="hover:text-secondary transition duration-300">
+                    +1 (234) 567-890
+                  </a>
+                </p>
+              </div>
+            </div>
+            <!-- Footer Bottom -->
+            <div class="mt-12 border-t border-gray-600 pt-6 text-center">
+              <p>&copy; 2023 Code Brain Hub. All rights reserved.</p>
+            </div>
+          </div>
+        </footer>
       
   
   
   <!-- AOS Library for Animations -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <!-- Initialize AOS -->
-  <script>
-    AOS.init({
-      once: true,
-      duration: 800,
-    });
-  </script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- Initialize AOS -->
+<script>
+  AOS.init({
+    once: true,
+    duration: 800,
+  });
+</script>
 
-  <!-- Mobile Menu Script -->
-  <script>
-    // Mobile menu toggle
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
+<!-- Mobile Menu Script -->
+<script>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
 
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      menuBtn.classList.toggle('mobile-menu-open');
-    });
-  </script>
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    menuBtn.classList.toggle('mobile-menu-open');
+  });
+</script>
 
 <!-- Circle Rotating Services Script -->
 <script>
