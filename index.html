@@ -19,7 +19,7 @@
       --hover-primary: #001a35;   /* Darker Blue for Hover */
       --hover-secondary: #2cad2c; /* Darker Green for Hover */
     }
-
+  
     /* General Text Colors */
     .text-primary {
       color: var(--primary-color);
@@ -36,7 +36,7 @@
     .text-white {
       color: var(--white-color);
     }
-
+  
     /* Buttons */
     .btn-primary {
       background-color: var(--primary-color);
@@ -58,14 +58,14 @@
     .btn-secondary:hover {
       background-color: var(--hover-secondary);
     }
-
+  
     /* Gradient Text */
     .gradient-text {
       background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-
+  
     /* Update link colors */
     a {
       color: var(--primary-color);
@@ -74,7 +74,7 @@
     a:hover {
       color: var(--secondary-color);
     }
-
+  
     /* Navbar styles */
     header {
       position: fixed;
@@ -146,404 +146,551 @@
     .mobile-menu-open #mobile-menu {
       display: block;
     }
-
+  
     /* Adjusted Padding for Larger Navbar */
     header .navbar {
       padding: 1.5rem;
     }
-
+  
     /* Sticky Navbar Adjustment */
     body {
       margin-top: 96px; /* Adjusted margin-top to account for navbar height */
     }
-/* Circle Rotating Services Styles */
-.holderCircle {
-  width: 500px;
-  height: 500px;
-  border-radius: 100%;
-  margin: 0 auto;
-  position: relative;
-}
-.dotCircle {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  margin: auto;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 100%;
-  z-index: 20;
-}
-.dotCircle .itemDot {
-  display: block;
-  width: 80px;
-  height: 80px;
-  position: absolute;
-  background: var(--white-color);
-  color: var(--primary-color);
-  border-radius: 50%;
-  text-align: center;
-  line-height: 80px;
-  font-size: 32px;
-  z-index: 3;
-  cursor: pointer;
-  border: 2px solid #e6e6e6;
-  transition: all 0.5s;
-}
-.dotCircle .itemDot.active {
-  background: var(--secondary-color);
-  color: var(--white-color);
-  border: 2px solid var(--white-color);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-.round {
-  position: absolute;
-  left: 40px;
-  top: 45px;
-  width: 410px;
-  height: 410px;
-  border: 2px dotted var(--secondary-color);
-  border-radius: 100%;
-  animation: rotation 100s infinite linear;
-}
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.contentCircle {
-  width: 250px;
-  height: 250px;
-  border-radius: 100%;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.contentCircle .CirItem {
-  position: absolute;
-  text-align: center;
-  opacity: 0;
-  transform: scale(0.8);
-  transition: all 0.5s;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.CirItem.active {
-  z-index: 1;
-  opacity: 1;
-  transform: scale(1);
-}
-.CirItem .title {
-  font-size: 28px;
-  font-weight: bold;
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: fadeInDown 1s both;
-}
-.CirItem p {
-  font-size: 18px;
-  color: #555;
-  margin-top: 10px;
-  max-width: 220px;
-  animation: fadeInUp 1s both;
-}
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .holderCircle {
-    width: 300px;
-    height: 300px;
-  }
-  .dotCircle .itemDot {
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
-    font-size: 24px;
-  }
-  .round {
-    width: 250px;
-    height: 250px;
-    left: 25px;
-    top: 25px;
-  }
-  .contentCircle {
-    width: 200px;
-    height: 200px;
-    top: 50%;
-  }
-  .navbar a {
-    @apply text-base;
-  }
-}
-
-/* Services Section Enhancements */
-.service-card {
-  position: relative;
-  overflow: hidden;
-  padding: 2rem;
-  border-radius: 0.75rem;
-  transition: transform 0.3s, box-shadow 0.3s;
-  background-color: var(--primary-color);
-  color: var(--white-color);
-}
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: -10%;
-  left: -10%;
-  width: 120%;
-  height: 120%;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent);
-  transform: scale(0);
-  transition: transform 0.5s;
-}
-.service-card:hover::before {
-  transform: scale(1);
-}
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-}
-.service-card h3 {
-  font-size: 1.75rem;
-  margin-top: 1rem;
-  color: var(--secondary-color);
-}
-.service-card i {
-  color: var(--secondary-color);
-  transition: transform 0.3s;
-}
-.service-card:hover i {
-  transform: rotate(20deg);
-}
-.service-card p,
-.service-card ul {
-  color: #f0f0f0;
-}
-.service-card ul li {
-  position: relative;
-  padding-left: 1.5rem;
-}
-.service-card ul li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: var(--secondary-color);
-}
-
-/* Testimonials Section Enhancements */
-.testimonials-carousel {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding-bottom: 1rem;
-}
-.testimonial-card {
-  min-width: 300px;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.testimonial-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-}
-.testimonial-card p {
-  color: #e0e0e0;
-}
-.testimonial-card img {
-  border: 2px solid var(--secondary-color);
-}
-.testimonial-card .text-secondary {
-  color: var(--secondary-color);
-}
-
-/* Portfolio Section Enhancements */
-.project-card {
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-}
-.project-card img {
-  transition: transform 0.5s;
-}
-.project-card:hover img {
-  transform: scale(1.05);
-}
-.project-card .overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-}
-.project-card h3 {
-  font-size: 1.5rem;
-  color: var(--secondary-color);
-}
-.project-card p {
-  color: #e0e0e0;
-}
-.project-card a {
-  color: var(--secondary-color);
-  transition: color 0.3s;
-}
-.project-card a:hover {
-  color: var(--white-color);
-}
-
-/* Decorative Gradient Overlay for Sections */
-section[id="testimonials"],
-section[id="portfolio"],
-section[id="intro"] {
-  position: relative;
-  overflow: hidden;
-  background-color: var(--primary-color);
-}
-section[id="testimonials"]::before,
-section[id="portfolio"]::before,
-section[id="intro"]::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 70%);
-  transform: rotate(45deg);
-}
-section[id="testimonials"] .container,
-section[id="portfolio"] .container,
-section[id="intro"] .container {
-  position: relative;
-  z-index: 10;
-}
-section[id="testimonials"] h2,
-section[id="portfolio"] h2,
-section[id="intro"] h2 {
-  color: var(--secondary-color);
-  position: relative;
-}
-section[id="testimonials"] h2::after,
-section[id="portfolio"] h2::after,
-section[id="intro"] h2::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: var(--secondary-color);
-  margin: 1rem auto 0;
-}
-section[id="testimonials"] p,
-section[id="portfolio"] p,
-section[id="intro"] p {
-  color: #e0e0e0;
-}
-
-/* AOS Animations for Cards */
-[data-aos="fade-right"] {
-  opacity: 0;
-  transform: translateX(-50px);
-  transition-property: opacity, transform;
-}
-[data-aos="fade-right"].aos-animate {
-  opacity: 1;
-  transform: translateX(0);
-}
-[data-aos="fade-up"] {
-  opacity: 0;
-  transform: translateY(50px);
-  transition-property: opacity, transform;
-}
-[data-aos="fade-up"].aos-animate {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Adjustments for Merged Contact Section in Footer */
-footer #contact {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-footer #contact h2,
-footer #contact p {
-  color: #e0e0e0;
-}
-footer hr {
-  border-color: rgba(255, 255, 255, 0.2);
-}
-/* Adjust form styles within footer */
-/* Footer Styles */
-footer {
+  
+    /* Circle Rotating Services Styles */
+    .holderCircle {
+      width: 500px;
+      height: 500px;
+      border-radius: 100%;
+      margin: 0 auto;
+      position: relative;
+    }
+    .dotCircle {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 100%;
+      z-index: 20;
+    }
+    .dotCircle .itemDot {
+      display: block;
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      background: var(--white-color);
+      color: var(--primary-color);
+      border-radius: 50%;
+      text-align: center;
+      line-height: 80px;
+      font-size: 32px;
+      z-index: 3;
+      cursor: pointer;
+      border: 2px solid #e6e6e6;
+      transition: all 0.5s;
+    }
+    .dotCircle .itemDot.active {
+      background: var(--secondary-color);
+      color: var(--white-color);
+      border: 2px solid var(--white-color);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .round {
+      position: absolute;
+      left: 40px;
+      top: 45px;
+      width: 410px;
+      height: 410px;
+      border: 2px dotted var(--secondary-color);
+      border-radius: 100%;
+      animation: rotation 100s infinite linear;
+    }
+    @keyframes rotation {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    .contentCircle {
+      width: 250px;
+      height: 250px;
+      border-radius: 100%;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .contentCircle .CirItem {
+      position: absolute;
+      text-align: center;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: all 0.5s;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .CirItem.active {
+      z-index: 1;
+      opacity: 1;
+      transform: scale(1);
+    }
+    .CirItem .title {
+      font-size: 28px;
+      font-weight: bold;
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeInDown 1s both;
+    }
+    .CirItem p {
+      font-size: 18px;
+      color: #555;
+      margin-top: 10px;
+      max-width: 220px;
+      animation: fadeInUp 1s both;
+    }
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .holderCircle {
+        width: 300px;
+        height: 300px;
+      }
+      .dotCircle .itemDot {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 24px;
+      }
+      .round {
+        width: 250px;
+        height: 250px;
+        left: 25px;
+        top: 25px;
+      }
+      .contentCircle {
+        width: 200px;
+        height: 200px;
+        top: 50%;
+      }
+      .navbar a {
+        @apply text-base;
+      }
+    }
+  
+    /* Services Section Enhancements */
+    .service-card {
+      position: relative;
+      overflow: hidden;
+      padding: 2rem;
+      border-radius: 0.75rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      background-color: var(--primary-color);
+      color: var(--white-color);
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: -10%;
+      left: -10%;
+      width: 120%;
+      height: 120%;
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent);
+      transform: scale(0);
+      transition: transform 0.5s;
+    }
+    .service-card:hover::before {
+      transform: scale(1);
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    }
+    .service-card h3 {
+      font-size: 1.75rem;
+      margin-top: 1rem;
+      color: var(--secondary-color);
+    }
+    .service-card i {
+      color: var(--secondary-color);
+      transition: transform 0.3s;
+    }
+    .service-card:hover i {
+      transform: rotate(20deg);
+    }
+    .service-card p,
+    .service-card ul {
+      color: #f0f0f0;
+    }
+    .service-card ul li {
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    .service-card ul li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--secondary-color);
+    }
+  
+    /* Testimonials Section Enhancements */
+    .testimonials-carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 1rem;
+    }
+    .testimonial-card {
+      min-width: 300px;
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    }
+    .testimonial-card p {
+      color: #e0e0e0;
+    }
+    .testimonial-card img {
+      border: 2px solid var(--secondary-color);
+    }
+    .testimonial-card .text-secondary {
+      color: var(--secondary-color);
+    }
+  
+    /* Portfolio Section Enhancements */
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    }
+    .project-card img {
+      transition: transform 0.5s;
+    }
+    .project-card:hover img {
+      transform: scale(1.05);
+    }
+    .project-card .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    }
+    .project-card h3 {
+      font-size: 1.5rem;
+      color: var(--secondary-color);
+    }
+    .project-card p {
+      color: #e0e0e0;
+    }
+    .project-card a {
+      color: var(--secondary-color);
+      transition: color 0.3s;
+    }
+    .project-card a:hover {
+      color: var(--white-color);
+    }
+  
+    /* Decorative Gradient Overlay for Sections */
+    section[id="testimonials"],
+    section[id="portfolio"],
+    section[id="intro"] {
+      position: relative;
+      overflow: hidden;
+      background-color: var(--primary-color);
+    }
+    section[id="testimonials"]::before,
+    section[id="portfolio"]::before,
+    section[id="intro"]::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 70%);
+      transform: rotate(45deg);
+    }
+    section[id="testimonials"] .container,
+    section[id="portfolio"] .container,
+    section[id="intro"] .container {
+      position: relative;
+      z-index: 10;
+    }
+    section[id="testimonials"] h2,
+    section[id="portfolio"] h2,
+    section[id="intro"] h2 {
+      color: var(--secondary-color);
+      position: relative;
+    }
+    section[id="testimonials"] h2::after,
+    section[id="portfolio"] h2::after,
+    section[id="intro"] h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--secondary-color);
+      margin: 1rem auto 0;
+    }
+    section[id="testimonials"] p,
+    section[id="portfolio"] p,
+    section[id="intro"] p {
+      color: #e0e0e0;
+    }
+  
+    /* AOS Animations for Cards */
+    [data-aos="fade-right"] {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition-property: opacity, transform;
+    }
+    [data-aos="fade-right"].aos-animate {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    [data-aos="fade-up"] {
+      opacity: 0;
+      transform: translateY(50px);
+      transition-property: opacity, transform;
+    }
+    [data-aos="fade-up"].aos-animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    /* Adjustments for Merged Contact Section in Footer */
+    footer #contact {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+    footer #contact h2,
+    footer #contact p {
+      color: #e0e0e0;
+    }
+    footer hr {
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    /* Adjust form styles within footer */
+    /* Footer Styles */
+    footer {
       background-color: var(--primary-color);
       color: var(--gray-200);
       position: relative;
       overflow: hidden;
     }
-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, var(--secondary-color) 0%, transparent 100%);
-    opacity: 0.2;
-    pointer-events: none;
-}
-
-/* Input Focus States */
-input:focus,
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--secondary-color) 0%, transparent 100%);
+      opacity: 0.2;
+      pointer-events: none;
+    }
+  
+    /* Input Focus States */
+    input:focus,
     textarea:focus {
       outline: none;
       border-color: var(--secondary-color);
       box-shadow: 0 0 0 1px var(--secondary-color);
     }
-
+  
     /* Additional Styles */
     .antialiased {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
-
-</style>
+  
+    /* Achievements Section Styles */
+    #achievements {
+      background-color: var(--primary-color);
+      color: var(--white-color);
+      position: relative;
+      padding: 4rem 0;
+      overflow: hidden;
+    }
+  
+    /* Gradient Overlay */
+    #achievements::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 70%);
+      transform: rotate(45deg);
+      z-index: 0;
+      opacity: 0.2;
+    }
+  
+    /* Container to position content above the gradient */
+    #achievements .container {
+      position: relative;
+      z-index: 1;
+    }
+  
+    /* Section Title */
+    #achievements h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 1rem;
+      color: var(--white-color);
+      background: linear-gradient(135deg, var(--secondary-color), transparent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  
+    /* Section Subtitle */
+    #achievements p {
+      text-align: center;
+      color: #d1d5db; /* Gray-300 */
+      max-width: 600px;
+      margin: 0 auto 3rem;
+    }
+  
+    /* Achievement Cards Grid */
+    #achievements .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+  
+    /* Achievement Card */
+    #achievements .achievement-card {
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      z-index: 1;
+    }
+  
+    #achievements .achievement-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    }
+  
+    /* Achievement Icon */
+    #achievements .achievement-card i {
+      font-size: 3rem;
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+      transition: transform 0.3s;
+    }
+  
+    #achievements .achievement-card:hover i {
+      transform: rotate(20deg);
+    }
+  
+    /* Achievement Number */
+    #achievements .achievement-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: var(--white-color);
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, var(--secondary-color), transparent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  
+    /* Achievement Description */
+    #achievements .achievement-description {
+      font-size: 1.1rem;
+      color: #d1d5db; /* Gray-300 */
+    }
+  
+    /* Progress Bar Container */
+    #achievements .progress-container {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.2);
+      height: 8px;
+      border-radius: 4px;
+      margin-top: 1.5rem;
+      overflow: hidden;
+    }
+  
+    /* Progress Bar Fill */
+    #achievements .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+      transition: width 0.5s ease-in-out;
+      border-radius: 4px;
+    }
+  
+    /* Hover Interaction for Progress Bars */
+    #achievements .achievement-card:hover .progress-bar {
+      width: 100%;
+    }
+  
+    /* Responsive Adjustments for Achievements Section */
+    @media (max-width: 768px) {
+      #achievements {
+        padding: 3rem 1rem;
+      }
+      #achievements h2 {
+        font-size: 2rem;
+      }
+      #achievements .achievement-card {
+        padding: 1.5rem;
+      }
+      #achievements .achievement-number {
+        font-size: 2rem;
+      }
+    }
+  
+    /* Other existing styles... */
+  
+  </style>
+  
   
 </head>
 <body class="antialiased text-gray-900">
@@ -834,9 +981,122 @@ input:focus,
               </div>
             </div>
           </section>
+          <!-- Enhanced Achievements Section -->
+    <section id="achievements" class="py-16 bg-gray-100">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-extrabold text-center text-gray-800 mb-4">
+          Our Achievements
+        </h2>
+        <p class="text-center text-gray-600 mb-12">
+          Celebrating our milestones and the success we've achieved together.
+        </p>
+        <div class="achievements-grid">
+          <!-- Achievement Card 1 -->
+          <div class="achievement-card" data-aos="fade-up">
+            <i class="fas fa-project-diagram" aria-hidden="true"></i>
+            <div class="achievement-number">150+</div>
+            <div class="achievement-description">Projects Delivered</div>
+            <div class="progress-container">
+              <div class="progress-bar"></div>
+            </div>
+          </div>
+          <!-- Achievement Card 2 -->
+          <div class="achievement-card" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-smile" aria-hidden="true"></i>
+            <div class="achievement-number">300+</div>
+            <div class="achievement-description">Happy Clients</div>
+            <div class="progress-container">
+              <div class="progress-bar"></div>
+            </div>
+          </div>
+          <!-- Achievement Card 3 -->
+          <div class="achievement-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-users" aria-hidden="true"></i>
+            <div class="achievement-number">1K+</div>
+            <div class="achievement-description">Active Users</div>
+            <div class="progress-container">
+              <div class="progress-bar"></div>
+            </div>
+          </div>
+          <!-- Achievement Card 4 -->
+          <div class="achievement-card" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-trophy" aria-hidden="true"></i>
+            <div class="achievement-number">25</div>
+            <div class="achievement-description">Awards Won</div>
+            <div class="progress-container">
+              <div class="progress-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Our Partners Section -->
+    <section id="partners" class="py-16 bg-primary text-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-6" data-aos="fade-up">
+          Our Partners
+        </h2>
+        <p class="text-center text-gray-300 max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="200">
+          We collaborate with industry-leading companies to deliver top-notch solutions.
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 items-center justify-items-center">
+          <!-- Partner Logo 1 -->
+          <div class="partner-logo" data-aos="fade-up" data-aos-delay="100">
+            <a href="https://www.microsoft.com" target="_blank" rel="noopener noreferrer">
+              <img src="https://via.placeholder.com/150x80?text=Microsoft" alt="Microsoft" class="h-12 grayscale hover:grayscale-0 transition duration-300 transform hover:scale-105">
+            </a>
+          </div>
+          <!-- Partner Logo 2 -->
+          <div class="partner-logo" data-aos="fade-up" data-aos-delay="200">
+            <a href="https://aws.amazon.com" target="_blank" rel="noopener noreferrer">
+              <img src="https://via.placeholder.com/150x80?text=AWS" alt="AWS" class="h-12 grayscale hover:grayscale-0 transition duration-300 transform hover:scale-105">
+            </a>
+          </div>
+          <!-- Partner Logo 3 -->
+          <div class="partner-logo" data-aos="fade-up" data-aos-delay="300">
+            <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+              <img src="https://via.placeholder.com/150x80?text=Google" alt="Google" class="h-12 grayscale hover:grayscale-0 transition duration-300 transform hover:scale-105">
+            </a>
+          </div>
+          <!-- Partner Logo 4 -->
+          <div class="partner-logo" data-aos="fade-up" data-aos-delay="400">
+            <a href="https://www.ibm.com" target="_blank" rel="noopener noreferrer">
+              <img src="https://via.placeholder.com/150x80?text=IBM" alt="IBM" class="h-12 grayscale hover:grayscale-0 transition duration-300 transform hover:scale-105">
+            </a>
+          </div>
+          <!-- Partner Logo 5 -->
+          <div class="partner-logo" data-aos="fade-up" data-aos-delay="500">
+            <a href="https://www.oracle.com" target="_blank" rel="noopener noreferrer">
+              <img src="https://via.placeholder.com/150x80?text=Oracle" alt="Oracle" class="h-12 grayscale hover:grayscale-0 transition duration-300 transform hover:scale-105">
+            </a>
+          </div>
+          <!-- Partner Logo 6 -->
+          <div class="partner-logo" data-aos="fade-up" data-aos-delay="600">
+            <a href="https://www.salesforce.com" target="_blank" rel="noopener noreferrer">
+              <img src="https://via.placeholder.com/150x80?text=Salesforce" alt="Salesforce" class="h-12 grayscale hover:grayscale-0 transition duration-300 transform hover:scale-105">
+            </a>
+          </div>
+          <!-- Partner Logo 7 -->
+          <div class="partner-logo" data-aos="fade-up" data-aos-delay="700">
+            <a href="https://www.adobe.com" target="_blank" rel="noopener noreferrer">
+              <img src="https://via.placeholder.com/150x80?text=Adobe" alt="Adobe" class="h-12 grayscale hover:grayscale-0 transition duration-300 transform hover:scale-105">
+            </a>
+          </div>
+          <!-- Partner Logo 8 -->
+          <div class="partner-logo" data-aos="fade-up" data-aos-delay="800">
+            <a href="https://www.intel.com" target="_blank" rel="noopener noreferrer">
+              <img src="https://via.placeholder.com/150x80?text=Intel" alt="Intel" class="h-12 grayscale hover:grayscale-0 transition duration-300 transform hover:scale-105">
+            </a>
+          </div>
+          <!-- Add more partner logos as needed -->
+        </div>
+      </div>
+    </section>
+  
       
           <!-- Testimonials Section -->
-          <section id="testimonials" class="py-16 bg-primary text-gray-200 relative">
+          <section id="testimonials" class="py-16 text-gray-200 relative">
             <!-- Decorative Element -->
             <div class="absolute inset-0 bg-gradient-to-tr from-secondary to-transparent opacity-20 pointer-events-none"></div>
             <div class="container mx-auto px-6 relative z-10">
@@ -895,6 +1155,7 @@ input:focus,
             </div>
           </section>
         </main>
+  
       
         <!-- Footer with Merged Contact Section -->
         <footer>
@@ -1015,129 +1276,108 @@ input:focus,
       
   
   
-  <!-- AOS Library for Animations -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<!-- Initialize AOS -->
-<script>
-  AOS.init({
-    once: true,
-    duration: 800,
-  });
-</script>
+ <!-- AOS Library for Animations -->
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <!-- CountUp.js Library -->
+<!-- CountUp.js Library (UMD Build) -->
+<script src="https://cdn.jsdelivr.net/npm/countup.js@2.0.7/dist/countUp.umd.js"></script>
 
-<!-- Mobile Menu Script -->
-<script>
-  // Mobile menu toggle
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
+ <!-- Initialize AOS -->
+ <script>
+   AOS.init({
+     once: true,
+     duration: 800,
+   });
+ </script>
+ 
+ <!-- Mobile Menu Script -->
+ <script>
+   // Mobile menu toggle
+   const menuBtn = document.getElementById('menu-btn');
+   const mobileMenu = document.getElementById('mobile-menu');
 
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-    menuBtn.classList.toggle('mobile-menu-open');
-  });
-</script>
+   menuBtn.addEventListener('click', () => {
+     mobileMenu.classList.toggle('hidden');
+     menuBtn.classList.toggle('mobile-menu-open');
+   });
+ </script>
+ 
+ <!-- Circle Rotating Services Script -->
+ <script>
+   document.addEventListener('DOMContentLoaded', function() {
+     let i = 2;
+     const fields = document.querySelectorAll('.itemDot');
+     const container = document.querySelector('.dotCircle');
+     const width = container.offsetWidth;
+     let radius = width / 2.5;
 
-<!-- Circle Rotating Services Script -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    let i = 2;
-    const fields = document.querySelectorAll('.itemDot');
-    const container = document.querySelector('.dotCircle');
-    const width = container.offsetWidth;
-    let radius = width / 2.5;
+     let angle = 0;
+     const step = (2 * Math.PI) / fields.length;
 
-    let angle = 0;
-    const step = (2 * Math.PI) / fields.length;
+     fields.forEach(function(item) {
+       const x = Math.round(width / 2 + radius * Math.cos(angle) - item.offsetWidth / 2);
+       const y = Math.round(width / 2 + radius * Math.sin(angle) - item.offsetHeight / 2);
+       item.style.left = x + 'px';
+       item.style.top = y + 'px';
+       angle += step;
+     });
 
-    fields.forEach(function(item) {
-      const x = Math.round(width / 2 + radius * Math.cos(angle) - item.offsetWidth / 2);
-      const y = Math.round(width / 2 + radius * Math.sin(angle) - item.offsetHeight / 2);
-      item.style.left = x + 'px';
-      item.style.top = y + 'px';
-      angle += step;
-    });
+     fields.forEach(function(item) {
+       item.addEventListener('click', function() {
+         const dataTab = this.getAttribute('data-tab');
+         fields.forEach(function(el) {
+           el.classList.remove('active');
+         });
+         this.classList.add('active');
 
-    fields.forEach(function(item) {
-      item.addEventListener('click', function() {
-        const dataTab = this.getAttribute('data-tab');
-        fields.forEach(function(el) {
-          el.classList.remove('active');
-        });
-        this.classList.add('active');
+         const CirItems = document.querySelectorAll('.CirItem');
+         CirItems.forEach(function(el) {
+           el.classList.remove('active');
+         });
+         document.querySelector('.CirItem' + dataTab).classList.add('active');
+         i = dataTab;
 
-        const CirItems = document.querySelectorAll('.CirItem');
-        CirItems.forEach(function(el) {
-          el.classList.remove('active');
-        });
-        document.querySelector('.CirItem' + dataTab).classList.add('active');
-        i = dataTab;
+         const rotationAngle = 360 - (i - 1) * (360 / fields.length);
+         container.style.transform = `rotate(${rotationAngle}deg)`;
+         container.style.transition = '2s';
+         fields.forEach(function(el) {
+           el.style.transform = `rotate(${(i - 1) * (360 / fields.length)}deg)`;
+           el.style.transition = '1s';
+         });
+       });
+     });
 
-        const rotationAngle = 360 - (i - 1) * (360 / fields.length);
-        container.style.transform = `rotate(${rotationAngle}deg)`;
-        container.style.transition = '2s';
-        fields.forEach(function(el) {
-          el.style.transform = `rotate(${(i - 1) * (360 / fields.length)}deg)`;
-          el.style.transition = '1s';
-        });
-      });
-    });
+     setInterval(function() {
+       if (i > fields.length) {
+         i = 1;
+       }
+       fields.forEach(function(el) {
+         el.classList.remove('active');
+       });
+       document.querySelector('.itemDot' + i).classList.add('active');
 
-    setInterval(function() {
-      if (i > fields.length) {
-        i = 1;
-      }
-      fields.forEach(function(el) {
-        el.classList.remove('active');
-      });
-      document.querySelector('.itemDot' + i).classList.add('active');
+       const CirItems = document.querySelectorAll('.CirItem');
+       CirItems.forEach(function(el) {
+         el.classList.remove('active');
+       });
+       document.querySelector('.CirItem' + i).classList.add('active');
 
-      const CirItems = document.querySelectorAll('.CirItem');
-      CirItems.forEach(function(el) {
-        el.classList.remove('active');
-      });
-      document.querySelector('.CirItem' + i).classList.add('active');
+       const rotationAngle = 360 - (i - 1) * (360 / fields.length);
+       container.style.transform = `rotate(${rotationAngle}deg)`;
+       container.style.transition = '2s';
+       fields.forEach(function(el) {
+         el.style.transform = `rotate(${(i - 1) * (360 / fields.length)}deg)`;
+         el.style.transition = '1s';
+       });
+       i++;
+     }, 5000);
+   });
+ </script>
+ 
+</body>
+</html>
 
-      const rotationAngle = 360 - (i - 1) * (360 / fields.length);
-      container.style.transform = `rotate(${rotationAngle}deg)`;
-      container.style.transition = '2s';
-      fields.forEach(function(el) {
-        el.style.transform = `rotate(${(i - 1) * (360 / fields.length)}deg)`;
-        el.style.transition = '1s';
-      });
-      i++;
-    }, 5000);
-  });
-</script>
-
-<!-- Testimonials Carousel Script -->
-<script>
-  const carousel = document.querySelector('.testimonials-carousel');
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-
-  carousel.addEventListener('mousedown', (e) => {
-    isDown = true;
-    carousel.classList.add('active');
-    startX = e.pageX - carousel.offsetLeft;
-    scrollLeft = carousel.scrollLeft;
-  });
-  carousel.addEventListener('mouseleave', () => {
-    isDown = false;
-    carousel.classList.remove('active');
-  });
-  carousel.addEventListener('mouseup', () => {
-    isDown = false;
-    carousel.classList.remove('active');
-  });
-  carousel.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - carousel.offsetLeft;
-    const walk = (x - startX) * 2; // Scroll speed
-    carousel.scrollLeft = scrollLeft - walk;
-  });
-</script>
+  
 
 </body>
 </html>
